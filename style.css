@@ -1,0 +1,278 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+        height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 2px dashed white;
+}
+
+.background {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.background::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.widgets {
+    padding: 3.17rem 0rem 4rem;
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease;
+    padding: 3.17rem 2.6rem 4rem;    
+    display: flex;   
+    flex-direction: column;    
+    justify-content: space-between;
+    max-width: 111rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .widgets {
+      padding: 5.6rem 0 9.8rem;
+    }
+  }
+
+.widgets-contents {
+    display: flex;    
+    flex-direction: column;    
+    justify-content: space-between;
+}
+
+.quote-wrapper {
+    text-transform: initial;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    max-width: 57.3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.67rem;
+    column-gap: 1.6rem;
+}
+
+.quote-wrapper .author {
+    font-weight: 700;
+    padding-top: .8rem;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+#refresh {
+    height: 1.8rem;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+#refresh svg {
+    fill: white;
+    outline: none;  
+    transition: transform 0.15s linear;    
+    opacity: 0.5;
+}
+
+#refresh svg:hover {
+    opacity: 1;
+}
+
+.currently {
+    text-transform: uppercase;
+}
+
+.currently header {
+    display: flex;
+}
+
+.currently .icon {
+    padding-right: 1.6rem;
+    animation: rotation 6s infinite linear;
+}
+
+.current-greeting,
+.currently span {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    initial-letter: 0.3rem;
+    font-weight: 400;
+}
+
+.currently span {
+    display: none;
+}
+
+.current-time {
+    padding-bottom: 4rem;
+}
+
+.time-wrapper {
+    display: flex;
+}
+
+.time-now {
+    font-size: 10rem;
+    line-height: 10rem;
+    letter-spacing: -2.5px;
+    padding: 1.6rem 1.6rem 1.6rem 0;
+}
+
+.standard-time {
+    align-self: center;
+    font-size: 1.5rem;
+    padding-top: 3.7rem;
+    font-weight: 300;
+}
+
+.current-location {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    letter-spacing: 3px;
+}
+
+.expand {
+    border-radius: 2.8rem;
+    width: 11.5rem;
+    height: 4rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    background: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 3.75px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 0.5rem 0 1.5rem;
+}
+
+.expand .arrow {
+    width: 3.2rem;
+    height: 3.2rem;
+    transform: rotate(180deg);
+    transition: transform 0.5s, filter 0.2s;
+}
+
+.expand .arrow:hover {
+    filter: brightness(330%);
+}
+
+.expand .rotate {
+    transform: rotate(0deg);
+}
+
+.details {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(40px);
+    padding: 4.8rem 2.6rem 3.2rem;
+    color: #303030;
+    position: absolute;
+    transition: all 0.5s ease;
+    bottom: -25.6rem;
+    width: 100%;
+}
+
+.details-content {
+    max-width: 111rem;
+}
+
+.details .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.6rem;
+}
+
+.details h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 2.8rem;
+}
+
+.details p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+}
+
+.region {
+    grid-area: region;
+}
+
+.day {
+    grid-area: day;
+}
+
+.weekday {
+    grid-area: weekday;
+}
+
+.week-number {
+    grid-area: week-number;
+}
+
+.transform {
+    transform: translate3d(0, -44rem, 0);
+}
+
+.day {
+    background-image: url(./img/casey-horner-0D8_tYHIy0o-unsplash.jpg);
+}
+
+.night {
+    background-image: url(./img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash.jpg);
+}
