@@ -28,8 +28,9 @@ Users should be able to:
 
 ### Links
 
-solution URL:
-Link URL:
+solution URL: https://github.com/JeremyKungu/clock-app-project
+
+Link URL: 
 
 ## My process
 
