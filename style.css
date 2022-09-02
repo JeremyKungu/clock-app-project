@@ -140,7 +140,7 @@ button:focus {
     animation: rotation 6s infinite linear;
 }
 
-.current-greeting,
+.currently-greeting,
 .currently span {
     font-size: 1.5rem;
     line-height: 2.5rem;

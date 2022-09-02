@@ -16,9 +16,7 @@ function getQuote() {
     
     fetch('https://quotes15.p.rapidapi.com/quotes/random/', options)
         .then(response => response.json())
-        .then((quotes) => {
-            const chosenQuote = quotes.data;            
-
+        .then((quotes) => { 
             document.getElementById("quote").textContent = quotes.content;
             author.textContent = quotes.originator.name;           
         })
@@ -40,7 +38,7 @@ function getTime() {
         greet = "Evening";
     }
 
-    document.querySelector(".current-greeting").textContent = `Good ${greet}`;
+    document.querySelector(".currently-greeting").textContent = `Good ${greet} , its currently`;
 
     //background and icons
     if(hour >= 5 && hour <=17){
@@ -87,36 +85,40 @@ function getTimeZone() {
         }
     };
     
-    fetch('https://world-time2.p.rapidapi.com/timezone/Europe/London', options)
+    fetch('https://world-time2.p.rapidapi.com/timezone/Africa/Nairobi', options)
         .then(response => response.json())
-        .then((regionRes) => {
-            const region = regionRes.data;
-            console.log(regionRes)
-
-            document.querySelector(".region").textContent = region.abbreviation;
-            document.getElementById("timezone").textContent = region.timezone;
-            document.getElementById("day").textContent = region.day_of_year;
-            document.getElementById("week-day").textContent = region.day_of_week;
-            document.getElementById("week-number").textContent = region.week_number;
+        .then((regionRes) => {            
+            //local timezone
+            document.querySelector(".region").textContent = regionRes.abbreviation;
+            //details
+            document.getElementById("timezone").textContent = regionRes.timezone;
+            document.getElementById("day").textContent = regionRes.day_of_year;
+            document.getElementById("week-day").textContent = regionRes.day_of_week;
+            document.getElementById("week-number").textContent = regionRes.week_number;
         })
         .catch(err => console.error(err));
+        
 }
 
 function getLocation() {
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("ip", "105.163.2.254");
+    
     const options = {
-        method: 'GET',
+        method: 'POST',
         headers: {
+            'content-type': 'application/x-www-form-urlencoded',
             'X-RapidAPI-Key': 'ac84a71c6bmsh1eb429a79a6d8bbp128c89jsn2a556460ff37',
-            'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
-        }
+            'X-RapidAPI-Host': 'ip-location5.p.rapidapi.com'
+        },
+        body: encodedParams
     };
     
-    fetch('https://countries-cities.p.rapidapi.com/location/country/list', options)
+    fetch('https://ip-location5.p.rapidapi.com/get_geo_info', options)
         .then(response => response.json())
         .then((location) => {
-            const ipLocation = location.data;
-            const regionName = ipLocation.region_name;
-            const countryCode = ipLocation.country_code;
+            const regionName = location.country.capital;
+            const countryCode = location.country.name;
             document.querySelector(".current-location").textContent = `in ${regionName}, ${countryCode}`;
         })
         .catch(err => console.error(err));
@@ -143,5 +145,5 @@ function showTimeZone() {
 }
 
 expand.addEventListener("click", showTimeZone);
-
+document.addEventListener("DOMContentLoaded", getQuote);
 document.getElementById("refresh").addEventListener("click", getQuote);
