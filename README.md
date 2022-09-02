@@ -1,5 +1,7 @@
 # Clock-app-project
 
+The project is a clock app that fetches the users location as well as the time and displays it and also randomly generates quotes.
+
 ## Table of contents
 
 - [Overview](#overview)
