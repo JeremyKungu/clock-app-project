@@ -32,7 +32,7 @@ Users should be able to:
 
 solution URL: https://github.com/JeremyKungu/clock-app-project
 
-Link URL: 
+Link URL: https://jeremykungu.github.io/clock-app-project/
 
 ## My process
 
