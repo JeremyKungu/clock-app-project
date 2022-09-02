@@ -3,7 +3,7 @@
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 html {
@@ -86,26 +86,21 @@ button:focus {
     }
   }
 
-.widgets-contents {
-    display: flex;    
-    flex-direction: column;    
-    justify-content: space-between;
-}
-
 .quote-wrapper {
     text-transform: initial;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     line-height: 2.2rem;
     max-width: 57.3rem;
     display: grid;
     grid-template-columns: 1fr 1.67rem;
     column-gap: 1.6rem;
+    padding-left: 20rem;
 }
 
 .quote-wrapper .author {
     font-weight: 700;
     padding-top: .8rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     line-height: 2.2rem;
 }
 
@@ -131,6 +126,11 @@ button:focus {
     text-transform: uppercase;
 }
 
+.widget-wrapper{
+   padding-bottom: 12rem; 
+   padding-left: 20rem;
+}
+
 .currently header {
     display: flex;
 }
@@ -142,7 +142,7 @@ button:focus {
 
 .currently-greeting,
 .currently span {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 2.5rem;
     initial-letter: 0.3rem;
     font-weight: 400;
@@ -161,26 +161,26 @@ button:focus {
 }
 
 .time-now {
-    font-size: 10rem;
-    line-height: 10rem;
+    font-size: 20rem;
+    line-height: 20rem;
     letter-spacing: -2.5px;
     padding: 1.6rem 1.6rem 1.6rem 0;
 }
 
 .standard-time {
     align-self: center;
-    font-size: 1.5rem;
+    font-size: 3rem;
     padding-top: 3.7rem;
     font-weight: 300;
 }
 
 .current-location {
-    font-size: 1.5rem;
+    font-size: 3rem;
     line-height: 2.8rem;
     letter-spacing: 3px;
 }
 
-.expand {
+.currently .expand {
     border-radius: 2.8rem;
     width: 11.5rem;
     height: 4rem;
@@ -196,8 +196,10 @@ button:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1px 0.5rem 0 1.5rem;
+   padding: 1px 0.5rem 0 1.5rem;
+   float: right;
 }
+
 
 .expand .arrow {
     width: 3.2rem;
@@ -216,12 +218,11 @@ button:focus {
 
 .details {
     background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(40px);
     padding: 4.8rem 2.6rem 3.2rem;
     color: #303030;
-    position: absolute;
+    position: relative;
     transition: all 0.5s ease;
-    bottom: -25.6rem;
+    bottom: -20.6rem;
     width: 100%;
 }
 

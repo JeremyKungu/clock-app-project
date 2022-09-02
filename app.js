@@ -145,5 +145,5 @@ function showTimeZone() {
 }
 
 expand.addEventListener("click", showTimeZone);
-document.addEventListener("DOMContentLoaded", getQuote);
+document.addEventListener("onload", getQuote);
 document.getElementById("refresh").addEventListener("click", getQuote);
